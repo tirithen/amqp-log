@@ -1,6 +1,6 @@
 # amqp-logging - An npm package to send log messages with ActiveMQ and the amqp protocol
 
-This package are meant to be used together with the docker image https://hub.docker.com/tirithen/amqp-logging-printer.
+This package are meant to be used together with the docker image https://hub.docker.com/r/tirithen/amqp-logging-printer/.
 
 Whenever writing a Node.js docker container service for an ActiveMQ system together with amqp-logging-printer, import and use this logger as in the usage example below.
 
@@ -34,6 +34,6 @@ While waiting for the containers to start. Modify the host to whatever ip addres
 
     name of the container                                   package name    level
             ⇓                                                    ⇓            ⇓
-    amqp-logging-printer_1            | 2016-10-08T10:02:54.676Z amqp-logging 0.1.0 info Hej, nu testar vi lite
+    amqp-logging-printer_1            | 2016-10-08T10:02:54.676Z amqp-logging 0.2.1 info Hej, nu testar vi lite
                                             ⇑                           ⇑                  ⇑
                                        date of log               package version      log message
