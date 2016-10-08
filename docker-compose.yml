@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+
+  activemq:
+    image: webcenter/activemq:5.13.2
+    environment:
+      - ACTIVEMQ_NAME=activemq
+      - ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT=true
+      - ACTIVEMQ_ADMIN_LOGIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=evpf7D0IOCUtqRE5fewe
+      - ACTIVEMQ_WRITE_LOGIN=producer
+      - ACTIVEMQ_WRITE_PASSWORD=DYjpp4fbCQ8zpiDIoJwP
+      - ACTIVEMQ_READ_LOGIN=consumer
+      - ACTIVEMQ_READ_PASSWORD=pmh0c3qYL100O6Ne1IqI
+      - ACTIVEMQ_JMX_LOGIN=jmx
+      - ACTIVEMQ_JMX_PASSWORD=uCFGlWSHbcGP4XZVRBAV
+      - ACTIVEMQ_STATIC_TOPICS=logs
+      #- ACTIVEMQ_STATIC_QUEUES=
+      - ACTIVEMQ_MIN_MEMORY=1024
+      - ACTIVEMQ_MAX_MEMORY=4096
+      - ACTIVEMQ_ENABLED_SCHEDULER=true
+    ports:
+      - 8161:8161
+    volumes:
+      - activemq-data:/data/activemq
+      - activemq-logs:/var/log/activemq
+
+  amqp-log-printer:
+    image: tirithen/amqp-log-printer:0.1.0
+    environment:
+      - AMQP_URL=amqp://consumer:pmh0c3qYL100O6Ne1IqI@activemq
+    depends_on:
+      - activemq
+    entrypoint: ./wait-for-http.sh activemq:5672 8 npm start
+
+volumes:
+
+  activemq-data:
+    driver: local
+
+  activemq-logs:
+    driver: local
