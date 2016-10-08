@@ -1,11 +1,19 @@
 {
   "name": "amqp-logging",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An npm package to send log messages with ActiveMQ and the amqp protocol",
   "main": "index.js",
   "dependencies": {
     "amqp10": "^3.2.5"
   },
+  "keywords": [
+    "amqp",
+    "activemq",
+    "logging",
+    "messaging",
+    "queues",
+    "topics"
+  ],
   "author": "Fredrik Söderström <tirithen@gmail.com>",
   "license": "GPL-3.0"
 }
