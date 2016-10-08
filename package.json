@@ -1,6 +1,6 @@
 {
   "name": "amqp-logging",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An npm package to send log messages with ActiveMQ and the amqp protocol",
   "main": "index.js",
   "dependencies": {

@@ -32,8 +32,8 @@ To try this out run docker-compose.yml with:
 
 While waiting for the containers to start. Modify the host to whatever ip address the activemq service got in test.js and run it, that should produce a printed log like:
 
-    name of the container                                   package name    level
-            ⇓                                                    ⇓            ⇓
+    name of the container                                          package name    level
+              ⇓                                                         ⇓            ⇓
     amqp-logging-printer_1            | 2016-10-08T10:02:54.676Z amqp-logging 0.2.1 info Hej, nu testar vi lite
-                                            ⇑                           ⇑                  ⇑
-                                       date of log               package version      log message
+                                                    ⇑                           ⇑                  ⇑
+                                               date of log               package version      log message
