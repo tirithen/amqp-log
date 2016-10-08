@@ -26,8 +26,8 @@ services:
       - activemq-data:/data/activemq
       - activemq-logs:/var/log/activemq
 
-  amqp-log-printer:
-    image: tirithen/amqp-log-printer:0.1.0
+  amqp-logging-printer:
+    image: tirithen/amqp-logging-printer:0.1.0
     environment:
       - AMQP_URL=amqp://consumer:pmh0c3qYL100O6Ne1IqI@activemq
     depends_on:
