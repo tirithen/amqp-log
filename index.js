@@ -44,6 +44,10 @@ class AMQPLog {
     return this.send(data, level);
   }
 
+  debug(...data) {
+    return this.log(data, 'debug');
+  }
+
   info(...data) {
     return this.log(data, 'info');
   }
