@@ -1,6 +1,6 @@
 {
   "name": "amqp-logging",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An npm package to send log messages with ActiveMQ and the amqp protocol",
   "main": "index.js",
   "dependencies": {
@@ -15,5 +15,13 @@
     "topics"
   ],
   "author": "Fredrik Söderström <tirithen@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tirithen/amqp-logging"
+  },
+  "bugs": {
+    "url": "https://github.com/tirithen/amqp-logging/issues"
+  },
+  "homepage": "https://github.com/tirithen/amqp-logging"
 }
