@@ -57,11 +57,11 @@ class AMQPLog {
   }
 
   warning(...data) {
-    return this.log(data, 'info');
+    return this.log(data, 'warning');
   }
 
   error(...data) {
-    return this.log(data, 'info');
+    return this.log(data, 'error');
   }
 }
 
