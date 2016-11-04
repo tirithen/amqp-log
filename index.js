@@ -37,8 +37,20 @@ class AMQPLog {
   }
 
   log(data, level = 'info') {
-    if (Array.isArray(data) && data.length === 1) {
-      return this.send(data[0], level);
+    if (Array.isArray(data)) {
+      data = data.map((value) => {
+        if (value instanceof Error) {
+          value = value.toString();
+        }
+
+        return value;
+      });
+
+      if (data.length === 1) {
+        return this.send(data[0], level);
+      }
+    } else if (data instanceof Error) {
+      data = data.toString();
     }
 
     return this.send(data, level);
